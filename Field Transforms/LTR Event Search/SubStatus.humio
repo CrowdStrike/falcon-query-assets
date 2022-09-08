@@ -17,6 +17,7 @@
     3221225874 => SubStatus := "An attempt was made to logon, but the Netlogon service was not started." ;
     3221225566 => SubStatus := "There are currently no logon servers available to service the logon request." ;
     3221225875 => SubStatus := "User logon with expired account" ;
+    3221225587 => SubStatus := "STATUS_NONE_MAPPED" ;
     3221226020 => SubStatus := "User is required to change password at next logon" ;
     3221226021 => SubStatus := "Evidently a bug in Windows and not a risk" ;
     3221226036 => SubStatus := "User logon with account locked" ;

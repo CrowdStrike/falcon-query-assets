@@ -16,10 +16,10 @@
 	SubStatus_decimal=3221225874, "An attempt was made to logon" ,
 	SubStatus_decimal=3221225566, "There are currently no logon servers available to service the logon request.",
 	SubStatus_decimal=3221225875, "User logon with expired account",
+	SubStatus_decimal=3221225587, "STATUS_NONE_MAPPED",
 	SubStatus_decimal=3221226020, "User is required to change password at next logon",
 	SubStatus_decimal=3221226021, "Evidently a bug in Windows and not a risk",
 	SubStatus_decimal=3221226036, "User logon with account locked",
 	SubStatus_decimal=3221226222, "Failure Reason: An Error occurred during Logon",
 	SubStatus_decimal=3221226515, "Logon Failure: The machine you are logging on to is protected by an authentication firewall. The specified account is not allowed to authenticate to the machine." 
 	)
-
