@@ -1,5 +1,5 @@
 // Transform to convert RemoteAccount decimal to human-readable value.
-| case {
-        RemoteAccount = "0"  | RemoteAccount := "No"   ;
-        RemoteAccount = "1"  | RemoteAccount := "Yes"  ;
-        * }
+| RemoteAccount match {
+    0 => RemoteAccount := "No"   ;
+    1 => RemoteAccount := "Yes"  ;
+    * => * }

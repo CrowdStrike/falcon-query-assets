@@ -1,5 +1,5 @@
 // Transform to convert ConnectionExchange decimal to human-readable value.
-| case {
-        ConnectionExchange = "41984"  | ConnectionExchange := "CALG_RSA_KEYX" ;
-        ConnectionExchange = "43522"  | ConnectionExchange := "CALG_DH_EPHEM" ;
-        * }
+| ConnectionExchange match {
+    41984 => ConnectionExchange := "CALG_RSA_KEYX" ;
+    43522 => ConnectionExchange := "CALG_DH_EPHEM" ;
+    *     => * }

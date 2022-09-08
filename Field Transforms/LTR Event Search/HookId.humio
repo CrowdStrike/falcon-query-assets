@@ -1,18 +1,18 @@
 // Transform to convert HookId decimal to human-readable value.
-| case {
-        HookId = "0"   | HookId := "WH_JOURNALRECORD" ;
-        HookId = "1"   | HookId := "WH_JOURNALPLAYBACK" ;
-        HookId = "2"   | HookId := "WH_KEYBOARD" ;
-        HookId = "3"   | HookId := "WH_GETMESSAGE" ;
-        HookId = "4"   | HookId := "WH_CALLWNDPROC" ;
-        HookId = "5"   | HookId := "WH_CBT" ;
-        HookId = "6"   | HookId := "WH_SYSMSGFILTER" ;
-        HookId = "7"   | HookId := "WH_MOUSE" ;
-        HookId = "8"   | HookId := "WH_HARDWARE" ;
-        HookId = "9"   | HookId := "WH_DEBUG" ;
-        HookId = "10"  | HookId := "WH_SHELL" ;
-        HookId = "11"  | HookId := "WH_FOREGROUNDIDLE" ;
-        HookId = "12"  | HookId := "WH_CALLWNDPROCRET" ;
-        HookId = "13"  | HookId := "WH_KEYBOARD_LL" ;
-        HookId = "14"  | HookId := "WH_MOUSE_LL" ;
-        * }
+| HookId match {
+    0  => HookId := "WH_JOURNALRECORD" ;
+    1  => HookId := "WH_JOURNALPLAYBACK" ;
+    2  => HookId := "WH_KEYBOARD" ;
+    3  => HookId := "WH_GETMESSAGE" ;
+    4  => HookId := "WH_CALLWNDPROC" ;
+    5  => HookId := "WH_CBT" ;
+    6  => HookId := "WH_SYSMSGFILTER" ;
+    7  => HookId := "WH_MOUSE" ;
+    8  => HookId := "WH_HARDWARE" ;
+    9  => HookId := "WH_DEBUG" ;
+    10 => HookId := "WH_SHELL" ;
+    11 => HookId := "WH_FOREGROUNDIDLE" ;
+    12 => HookId := "WH_CALLWNDPROCRET" ;
+    13 => HookId := "WH_KEYBOARD_LL" ;
+    14 => HookId := "WH_MOUSE_LL" ;
+    *  => * }

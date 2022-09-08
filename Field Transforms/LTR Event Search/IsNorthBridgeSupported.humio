@@ -1,5 +1,5 @@
 // Transform to convert IsNorthBridgeSupported decimal to human-readable value.
-| case {
-        IsNorthBridgeSupported = "0"  | IsNorthBridgeSupported := "No" ;
-        IsNorthBridgeSupported = "1"  | IsNorthBridgeSupported := "Yes" ;
-        * }
+| IsNorthBridgeSupported match {
+    0 => IsNorthBridgeSupported := "No" ;
+    1 => IsNorthBridgeSupported := "Yes" ;
+    * => * }

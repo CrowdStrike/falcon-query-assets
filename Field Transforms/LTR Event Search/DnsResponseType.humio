@@ -1,6 +1,6 @@
 // Transform to convert DnsResponseType decimal to human-readable value.
-| case {
-        DnsResponseType = "0"  | DnsResponseType := "UNKNOWN" ;
-        DnsResponseType = "1"  | DnsResponseType := "CACHE" ;
-        DnsResponseType = "2"  | DnsResponseType := "WIRE" ;
-        * }
+| DnsResponseType match {
+    0 => DnsResponseType := "UNKNOWN" ;
+    1 => DnsResponseType := "CACHE" ;
+    2 => DnsResponseType := "WIRE" ;
+    * => * }

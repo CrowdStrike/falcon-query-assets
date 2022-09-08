@@ -1,7 +1,7 @@
 // Transform to convert LdapSecurityType decimal to human-readable value.
-| case {
-        LdapSecurityType = "0" | LdapSecurityType := "None" ;
-        LdapSecurityType = "1" | LdapSecurityType := "TLS" ;
-        LdapSecurityType = "2" | LdapSecurityType := "SASL Integrity" ;
-        LdapSecurityType = "3" | LdapSecurityType := "SASL Confidentiality" ;
-        * }
+| LdapSecurityType match {
+    0 => LdapSecurityType := "None" ;
+    1 => LdapSecurityType := "TLS" ;
+    2 => LdapSecurityType := "SASL Integrity" ;
+    3 => LdapSecurityType := "SASL Confidentiality" ;
+    * => * }

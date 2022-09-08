@@ -1,18 +1,18 @@
 // Transform to convert KDCOptions decimal to human-readable value.
-| case {
-        KDCOptions_decimal = "1073741824"  | KDCOptions_decimal := "Forwardable" ;
-        KDCOptions_decimal = "536870912"  | KDCOptions_decimal := "Forwarded" ;
-        KDCOptions_decimal = "268435456"  | KDCOptions_decimal := "Proxiable" ;
-        KDCOptions_decimal = "134217728"  | KDCOptions_decimal := "Proxy" ;
-        KDCOptions_decimal = "67108864"  | KDCOptions_decimal := "Allow_Postdate" ;
-        KDCOptions_decimal = "33554432"  | KDCOptions_decimal := "Postdated" ;
-        KDCOptions_decimal = "8388608"  | KDCOptions_decimal := "Renewable" ;
-        KDCOptions_decimal = "131072"  | KDCOptions_decimal := "CNAME_IN_ADDL_TKT" ;
-        KDCOptions_decimal = "65536" | KDCOptions_decimal := "Canonicalize" ;
-        KDCOptions_decimal = "32768" | KDCOptions_decimal := "Request_Anonymous" ;
-        KDCOptions_decimal = "32" | KDCOptions_decimal := "Disable_Transited_Check" ;
-        KDCOptions_decimal = "16" | KDCOptions_decimal := "Renewable_OK" ;
-        KDCOptions_decimal = "8" | KDCOptions_decimal := "ENC_TKT_IN_SKEY" ;
-        KDCOptions_decimal = "2" | KDCOptions_decimal := "Renew" ;
-        KDCOptions_decimal = "1" | KDCOptions_decimal := "Validate" ;
-        * }
+| KDCOptions_decimal match {
+    1073741824 => KDCOptions_decimal := "Forwardable" ;
+    536870912  => KDCOptions_decimal := "Forwarded" ;
+    268435456  => KDCOptions_decimal := "Proxiable" ;
+    134217728  => KDCOptions_decimal := "Proxy" ;
+    67108864   => KDCOptions_decimal := "Allow_Postdate" ;
+    33554432   => KDCOptions_decimal := "Postdated" ;
+    8388608    => KDCOptions_decimal := "Renewable" ;
+    131072     => KDCOptions_decimal := "CNAME_IN_ADDL_TKT" ;
+    65536      => KDCOptions_decimal := "Canonicalize" ;
+    32768      => KDCOptions_decimal := "Request_Anonymous" ;
+    32         => KDCOptions_decimal := "Disable_Transited_Check" ;
+    16         => KDCOptions_decimal := "Renewable_OK" ;
+    8          => KDCOptions_decimal := "ENC_TKT_IN_SKEY" ;
+    2          => KDCOptions_decimal := "Renew" ;
+    1          => KDCOptions_decimal := "Validate" ;
+    *          => * }

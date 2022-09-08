@@ -1,7 +1,7 @@
 // Transform to convert CpuVendor decimal to human-readable value.
-| case {
-        CpuVendor = "0"  | CpuVendor := "Intel Processor" ;
-        CpuVendor = "1"  | CpuVendor := "AMD Processor" ;
-        CpuVendor = "2"  | CpuVendor := "Apple Processor" ;
-        CpuVendor = "3"  | CpuVendor := "ARM64 Processor" ;
-        * }
+| CpuVendor match {
+    0 => CpuVendor := "Intel Processor" ;
+    1 => CpuVendor := "AMD Processor" ;
+    2 => CpuVendor := "Apple Processor" ;
+    3 => CpuVendor := "ARM64 Processor" ;
+    * => * }

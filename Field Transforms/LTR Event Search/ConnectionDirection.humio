@@ -1,7 +1,7 @@
 // Transform to convert ConnectionDirection decimal to human-readable value.
-| case {
-        ConnectionDirection = "0" | ConnectionDirection := "Outbound" ;
-        ConnectionDirection = "1" | ConnectionDirection := "Inbound" ;
-        ConnectionDirection = "2" | ConnectionDirection := "Neither" ;
-        ConnectionDirection = "3" | ConnectionDirection := "Both" ;
-        * }
+| ConnectionDirection match {
+    0 => ConnectionDirection := "Outbound" ;
+    1 => ConnectionDirection := "Inbound" ;
+    2 => ConnectionDirection := "Neither" ;
+    3 => ConnectionDirection := "Both" ;
+    * => * }
