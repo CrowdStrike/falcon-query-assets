@@ -350,3 +350,19 @@ Instead, you'd like the `severity` aligned with the `detectionName` in the query
 The `format()` line says "pad the first value until it's 18 characters wide". You now end up with this:
 
 <img src=./images/image-2023-01-17_16-47-53.png width=400>
+
+## Link to content in lookup files using `match`
+
+To use the `match()` function, you can use the LogScale UI to upload a file using the Files menu, or can upload a CSV or JSON file using the lookup api.
+
+In this example, when used in a search, let all events pass through (denoted by the `strict=false`), but for events in which the RemoteAddressIP4.country field (in the search) matches the value of the CountryCode column (in the table geo_mapping.csv) enrich those events with the Country, Continent, and Flag values of the matching row from the lookup file.
+
+For example:
+
+```
+| match(file="geo_mapping.csv", column=CountryCode, field=RemoteAddressIP4.country, include=["Country", "Continent", "Flag"], ignoreCase=true, strict=false)
+```
+
+You now end up with additional columns from the lookup file that were not part of the original event, but are included because values from the search matched in the lookup file, like this:
+
+<img src=./images/2023-02-13_17-02-41_match_geo_example.png width=400>
